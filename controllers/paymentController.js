@@ -1,6 +1,9 @@
 import axios from "axios";
 import { Payment } from "../model/paymentModel.js"; 
 import { User } from "../model/authModel.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 // Paystack Secret Key (from env file)
 const PAYSTACK_SECRET = process.env.PAYSTACK_SECRET_KEY;
@@ -11,6 +14,7 @@ const PAYSTACK_BASE_URL = "https://api.paystack.co";
 
 // ================== INITIALIZE PAYMENT ==================
 export const initializePayment = async (req, res) => {
+  console.log("Request Body:", req.body);
   try {
     const { userId, fullName, email, amount, paymentMethod, currency = "GHS" } = req.body;
 
