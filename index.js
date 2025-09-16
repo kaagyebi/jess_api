@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRouter from "./routes/authRoute.js";
 import paymentRouter from "./routes/paymentRoute.js";
-import cors from cors;
+import cors from "cors";
 
 
 dotenv.config();
