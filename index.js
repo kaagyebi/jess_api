@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRouter from "./routes/authRoute.js";
 import paymentRouter from "./routes/paymentRoute.js";
+import cors from cors;
 
 
 dotenv.config();
@@ -16,6 +17,7 @@ const app = express();
 const PORT = process.env.PORT || 5300;
 
 // Middleware
+app.use(cors());
 app.use(express.json());
 
 // Routes
