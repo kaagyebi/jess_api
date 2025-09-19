@@ -7,7 +7,7 @@ const userRouter = express.Router();
 
 // ================== AUTH ROUTES ==================
 userRouter.post("/signup", signupValidation, validateRequest, signup);
-userRouter.get("/login", loginValidation, validateRequest, login);
+userRouter.post("/login", loginValidation, validateRequest, login);
 userRouter.post("/logout", logout);
 
 export default userRouter;
